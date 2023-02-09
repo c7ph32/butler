@@ -39,7 +39,7 @@ function parseArguments(): Arguments {
 
 const { url, headers, method, body, json, output } = parseArguments()
 
-const response = await fetch(url.toString(), { method, body })
+const response = await butler(url.toString(), { method, body })
 
 if (output && response.body) {
     const reader = readerFromStreamReader(response.body.getReader())
